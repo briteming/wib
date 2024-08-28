@@ -36,6 +36,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
       - name: Trigger deploy action
-        uses: actions/repository_dispatch@v1
+        uses: peter-evans/repository-dispatch@v3
         with:
           event_type: deploy
