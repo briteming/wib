@@ -7,7 +7,7 @@ on:
       - opened
       - edited
 
-permissions: write-all
+# permissions: write-all
 
 jobs:
   create_post:
