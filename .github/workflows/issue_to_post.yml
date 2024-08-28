@@ -7,7 +7,7 @@ on:
       - opened
       - edited
 
-# permissions: write-all
+permissions: write-all
 
 jobs:
   create_post:
@@ -35,3 +35,7 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+      - name: Trigger deploy action
+        uses: actions/repository_dispatch@v1
+        with:
+          event_type: deploy
