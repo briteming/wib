@@ -46,7 +46,7 @@ jobs:
           bundler-cache: true
       - name: Replace baseurl
         run: |
-          sed -i 's|baseurl: ""|baseurl: "${{ steps.pages.outputs.base_url }}"|' _config.yml
+          sed -i 's|baseurl: ""|baseurl: "${{ steps.pages.outputs.base_path }}"|' _config.yml
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
