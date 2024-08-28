@@ -1,0 +1,26 @@
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+
+jobs:
+  create_post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby: "3.3.3"
+          bundler: "2.5.6"
+      - name: Create post file
+        run: |
+          echo "title: ${{ github.event.issue.title }}" >> post.md
+          echo "body: ${{ github.event.issue.body }}" >> post.md
+      - name: Commit and push changes
+        run: |
+          git add post.md
+          git commit -m "Create post for issue #${{ github.event.issue.number }}"
+          git push
