@@ -13,11 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby_version: "3.3.3"
-          bundler-cache: true
       - name: Create post file
         run: |
           echo "title: ${{ github.event.issue.title }}" >> post.md
