@@ -17,7 +17,6 @@ jobs:
         run: .github/workflows/create_post_file.sh
         env:
           TITLE: ${{ github.event.issue.title }}
-          LABELS: ${{ github.event.issue.labels }}
           BODY: ${{ github.event.issue.body }}
           CREATED_AT: ${{ github.event.issue.created_at }}
       - name: Commit and push changes
