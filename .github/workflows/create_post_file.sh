@@ -6,7 +6,7 @@ echo Labels ${LABELS}
 echo Body ${BODY}
 
 
-POST_FILENAME="_posts/$(date +%Y-%m-%d)-$(echo -n ${TITLE}) | tr '[A-Z]' '[a-z]' | tr -c 'a-z' '-' }}.md"
+POST_FILENAME="_posts/$(date +%Y-%m-%d)-$(echo -n ${TITLE} | tr '[A-Z]' '[a-z]' | tr -c 'a-z' '-' ).md"
 echo ${POST_FILENAME}
 
 echo --- > ${POST_FILENAME}
