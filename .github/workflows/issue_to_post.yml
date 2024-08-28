@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v2
       - name: Create post file
         run: |
-          FILENAME="_posts/$(date +%Y-%m-%d)-$(echo -n ${{ github.event.issue.title }}) | tr '[A-Z]' '[a-z]' | tr -c 'a-z' '-' }}.md"
-          echo --- > $FILENAME
-          echo title: ${{ github.event.issue.title }} >> $FILENAME
-          echo layout: post >> $FILENAME
-          echo date: $(date +"%Y-%m-%d %H:%M %z") >> $FILENAME
-          echo --- >> $FILENAME
-          echo >> $FILENAME
-          echo "${{ github.event.issue.body }}" >> $FILENAME
+          POST_FILENAME="_posts/$(date +%Y-%m-%d)-$(echo -n ${{ github.event.issue.title }}) | tr '[A-Z]' '[a-z]' | tr -c 'a-z' '-' }}.md"
+          echo --- > $POST_FILENAME
+          echo title: ${{ github.event.issue.title }} >> $POST_FILENAME
+          echo layout: post >> $POST_FILENAME
+          echo date: $(date +"%Y-%m-%d %H:%M %z") >> $POST_FILENAME
+          echo --- >> $POST_FILENAME
+          echo >> $POST_FILENAME
+          echo "${{ github.event.issue.body }}" >> $POST_FILENAME
       - name: Commit and push changes
         run: |
           git config --global user.email "readme-bot@example.com"
