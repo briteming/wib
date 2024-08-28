@@ -7,6 +7,7 @@ echo Body ${BODY}
 
 
 POST_FILENAME="_posts/$(date +%Y-%m-%d)-$(echo -n ${TITLE}) | tr '[A-Z]' '[a-z]' | tr -c 'a-z' '-' }}.md"
+echo ${POST_FILENAME}
 
 echo --- > ${POST_FILENAME}
 echo title: ${TITLE} >> ${POST_FILENAME}
