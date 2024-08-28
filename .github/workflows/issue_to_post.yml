@@ -34,4 +34,4 @@ jobs:
           git commit -m "Create post for issue #${{ github.event.issue.number }}"
           git push
         env:
-          GH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
