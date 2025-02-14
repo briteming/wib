@@ -3,7 +3,7 @@ email: wschenk@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is a proof on concept that turns a github issue into a blog
   post and then automatically generated a static site.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/wib" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: wschenk
 github_username: wschenk
